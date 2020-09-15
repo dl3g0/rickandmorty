@@ -1,0 +1,84 @@
+* {
+    box-sizing: border-box;
+  }
+  
+
+.md-accordion .card .fa-angle-down {
+    float: right;
+}
+.logo img{
+   width: auto;
+
+}
+.fondo{
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    display: block;
+    
+    width: 100vw;
+    height: 100vh;
+
+ background-image:linear-gradient(
+    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.5)
+  ), url('https://w.wallhaven.cc/full/j8/wallhaven-j8gqjm.jpg');
+background-attachment: fixed;
+background-size: cover;
+filter: blur(6px)!important; 
+
+
+}
+
+#backg{
+    position: relative;
+    z-index: 1;
+}
+
+.card{
+    background-color: #3B3B3B;
+}
+.card h2{
+    color: white;
+    font-family: 'Gloria Hallelujah', cursive;
+}
+.card h5{
+    color: white;
+    font-family: 'Cagliostro', sans-serif;
+}
+.card p{
+    color:white ;
+    font-family: 'Grandstander', cursive;
+}
+.collapse i{
+    padding-left: 10px;
+    font-size: 20px;
+}
+.card-footer:last-child {
+    margin-top: 27px;}
+
+.box-cont{
+
+    margin-top: 150px;
+
+}
+@media (max-width: 576px){
+    
+    .box-cont{
+
+        margin-top: 250px;
+    
+    }
+    }
+    @media (max-width: 768px){
+        .box-cont {
+            margin-top: 200px;
+        }
+
+    }
+    
+
+    .busqueda{
+        margin-bottom: 40px ;
+    }

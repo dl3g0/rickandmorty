@@ -1,0 +1,142 @@
+<div class="fondo">
+</div>
+<div id="backg">
+<app-navbar (search)="handleSearch($event)" ></app-navbar>
+
+<div class="container">
+    <div class="row">
+        <div class="col-12 box-cont">
+            <div   class="container busqueda">
+                <div *ngIf="filtro_valor!" class="row">
+                    <div class="col">
+                        <ul class="list-group">
+                            <li *ngFor="let post of posts | search:filtro_valor"  class="list-group-item">{{post.name}} <a href=#container{{post.id}}>aqui</a> </li>
+                          </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-12 text-center " *ngFor="let post of posts" id="container{{post.id}}">
+                <div class="card mb-3">
+                    <div class="row no-gutters">
+                      <div class="col-md-4">
+                        <img src="{{post.image}}" class="card-img" alt="...">
+                      </div>
+                      <div class="col-md-8">
+                        <div class="card-body">
+                          <h2 class="card-title">{{post.name}} </h2>
+                            <!--Accordion wrapper-->
+                                <div class="accordion md-accordion" id="accordionEx1" role="tablist" aria-multiselectable="true">
+
+                                    <!-- Accordion card -->
+                                    <div class="card">
+                                
+                                    <!-- Card header -->
+                                    <div class="card-header" role="tab" >
+                                        <a class="collapsed" data-toggle="collapse"  href="#Estado{{post.id}}"
+                                        aria-expanded="false" aria-controls="Estado{{post.id}}">
+                                        <h5 class="mb-0">
+                                            Estado <i class="fas fa-angle-down rotate-icon"></i>
+                                        </h5>
+                                        </a>
+                                    </div>
+                                    <!-- Card body --> <!-- {{post.status}}  -->
+                                    <div id="Estado{{post.id}}" class="collapse" role="tabpanel" 
+                                       >
+                                        <div class="card-body"> 
+                                        <p *ngIf="post.status==='Alive'">Vivo<i class="fas fa-heartbeat"></i></p>
+                                        <p *ngIf="post.status==='Dead'">Muerto <i class="fas fa-skull-crossbones"></i></p>
+                                        <p *ngIf="post.status==='unknown'">Sin datos disponibles</p>
+                                        </div>
+                                    </div>
+                                
+                                    </div>
+                                    <!-- Accordion card -->
+                                
+                                    <!-- Accordion card -->
+                                    <div class="card">
+                                
+                                    <!-- Card header -->
+                                    <div class="card-header" role="tab" id="headingTwo2">
+                                        <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx1" href="#Especie{{post.id}}"
+                                        aria-expanded="false" aria-controls="Especie{{post.id}}">
+                                        <h5 class="mb-0">
+                                            Especie <i class="fas fa-angle-down rotate-icon"></i>
+                                        </h5>
+                                        </a>
+                                    </div>
+                                
+                                    <!-- Card body -->
+                                    <div id="Especie{{post.id}}" class="collapse" role="tabpanel" aria-labelledby="headingTwo21"
+                                        data-parent="#accordionEx1">
+                                        <div class="card-body">
+                                        <p *ngIf="post.species==='Human'">Humano</p>
+                                        <p *ngIf="post.species==='Alien'">Extraterrestres</p>         
+                                        </div>
+                                    </div>
+                                
+                                    </div>
+                                    <!-- Accordion card -->
+                                
+                                    <!-- Accordion card -->
+                                    <div class="card">
+                                
+                                    <!-- Card header -->
+                                    <div class="card-header" role="tab" id="headingThree31">
+                                        <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx1" href="#Genero{{post.id}}"
+                                        aria-expanded="false" aria-controls="Genero{{post.id}}">
+                                        <h5 class="mb-0">
+                                            Genero <i class="fas fa-angle-down rotate-icon"></i>
+                                        </h5>
+                                        </a>
+                                    </div>
+                                    <!-- Card body -->
+                                    <div id="Genero{{post.id}}" class="collapse" role="tabpanel" aria-labelledby="headingThree31"
+                                        data-parent="#accordionEx1">
+                                        <div class="card-body">
+                                        <p *ngIf="post.gender==='Male'">Hombre</p>
+                                        <p *ngIf="post.gender==='Female'">Mujer</p>          
+                                        </div>
+                                    </div>
+                                
+                                    </div>
+                                    <!-- Accordion card -->
+                                    <div class="card">
+                                
+                                        <!-- Card header -->
+                                        <div class="card-header" role="tab" id="headingTwo41">
+                                            <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx1" href="#Localizacion{{post.id}}"
+                                            aria-expanded="false" aria-controls="Localizacion{{post.id}}">
+                                            <h5 class="mb-0">
+                                                Localizacion <i class="fas fa-angle-down rotate-icon"></i>
+                                            </h5>
+                                            </a>
+                                        </div>
+                                    
+                                        <!-- Card body -->
+                                        <div id="Localizacion{{post.id}}" class="collapse" role="tabpanel" aria-labelledby="headingTwo41"
+                                            data-parent="#accordionEx1">
+                                            <div class="card-body">
+                                            <p>{{post.location.name}}</p>
+                                            </div>
+                                        </div>
+                                    
+                                        </div>
+                                </div>
+                                <!-- Accordion wrapper -->
+
+                                
+                          
+                        </div>
+                        <div class="card-footer text-muted">
+                            <p class="card-text"><small class="text-muted">Ultima Actualizacion {{post.created}}</small></p>
+                        </div>
+                      </div>
+                      
+                    </div>
+                  </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
